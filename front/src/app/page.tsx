@@ -1,8 +1,11 @@
+import HomeView from '@/page/HomeView';
 import React from 'react'
 
 const Home: React.FC = () => {
   return (
-    <div> this is a Home</div>
+    <div> 
+      <HomeView/>
+    </div>
   )
 }
 
