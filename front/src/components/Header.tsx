@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 import Image from 'next/image';
 import ButtonHeader from './ButtonHeader';
 import DropDown from './DropDown';
+import SearchBar from './SearchBar';
+import SectionSwitcher from './SectionSwitcher';
 const Header:React.FC = () => {
 
   const [isLoggerIn,setIsLoggedIn]=useState(false);
@@ -11,8 +13,8 @@ const Header:React.FC = () => {
     setIsLoggedIn(true);
   }
   return (
-    <header className='header bg-black text-white py-4'>
-      <div className='mx-auto header__logo flex flex-row  bg-green-500 w-[100%]'>
+    <header className='heade bg-black text-white py-4'>
+      <div className='relative mx-auto header__logo flex flex-row  w-[100%]'>
               <Image 
                     src='/logo.png'
                     alt="logo"
@@ -34,14 +36,20 @@ const Header:React.FC = () => {
                   </div>
 
                 ):(
-                    <DropDown/>                )
+                    <div className='flex flex-row justify-between bg-red-600'>
+                          <DropDown/>      
+                          <SectionSwitcher/>
+                          <SearchBar/> 
+                    </div>
+                   
+                  )
+                 
                }
           </div>
- 
+
        
-  
     </header>
   )
-}
+}                                                                                                                                                             
 
 export default Header;
