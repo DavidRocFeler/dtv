@@ -36,14 +36,19 @@ const Header:React.FC = () => {
                   </div>
 
                 ):(
-                    <div className='flex flex-row justify-between bg-red-600'>
-                          <DropDown/>      
-                          <SectionSwitcher/>
-                          <SearchBar/> 
-                    </div>
-                   
+                  <div className="w-[50%] ml-auto flex flex-row">
+                  {/* Sección SectionSwitcher */}
+                  <div className="flex flex-row items-center space-x-8">
+                    <SectionSwitcher />
+                  </div>
+      
+                  {/* Sección SearchBar y DropDown */}
+                  <div className="flex flex-row items-center ml-auto space-x-8 px-[2rem]">
+                    <SearchBar />
+                    <DropDown />
+                  </div>
+                </div>
                   )
-                 
                }
           </div>
 
