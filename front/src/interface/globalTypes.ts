@@ -15,3 +15,8 @@ export interface IMovieDataProps {
     poster: string;
     review: string;
 }
+
+export interface ICovertext {
+    id: number;
+    text: string;
+}
