@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { FaChevronDown  } from "react-icons/fa"; // Importa el ícono
+import { FaChevronDown } from "react-icons/fa"; // Importa el ícono
 
 type Option = string;
 
@@ -29,7 +29,7 @@ const DropDown = () => {
   }, []);
 
   return (
-    <div className="absolute right-[2rem] top-1" ref={dropdownRef}>
+    <div className="relative" ref={dropdownRef}>
       {/* Botón del menú */}
       <button
         onClick={() => setIsOpen(!isOpen)}
@@ -41,7 +41,7 @@ const DropDown = () => {
 
       {/* Opciones del menú */}
       {isOpen && (
-        <ul className="relative top-0 left-1/2 transform -translate-x-1/2 mt-2 w-48 bg-black rounded shadow-lg z-50">
+        <ul className="absolute top-full left-0 mt-2 w-48 bg-black rounded shadow-lg z-50">
           {options.map((option, index) => (
             <li
               key={index}
