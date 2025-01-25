@@ -20,3 +20,9 @@ export interface ICovertext {
     id: number;
     text: string;
 }
+
+export interface IFaq{
+    id?:number,
+    question:string,
+    answer:string
+}

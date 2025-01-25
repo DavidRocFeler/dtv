@@ -33,7 +33,7 @@ const DropDown = () => {
       {/* Botón del menú */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="text-white px-4 py-2 rounded bg-blue-500 flex items-center justify-between"
+        className={`bg-custom-gradient text-white px-4 py-2 rounded flex items-center justify-between`}
       >
         {selectedOption}
         <FaChevronDown className="ml-2 w-4 h-4" /> {/* Ícono más pequeño */}
