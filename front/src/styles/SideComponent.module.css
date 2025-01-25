@@ -1,0 +1,32 @@
+/* Contenedor principal */
+.GridContainer {
+    padding: 20px;
+    background-color: black;
+    border-radius: 8px;
+  }
+  
+  /* Título */
+  .Title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Tabla con Grid */
+  .GridTable {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);; /* Columnas flexibles */
+    gap: 10px; /* Espacio entre elementos */
+  }
+  
+  /* Elementos de la cuadrícula */
+  .GridItem {
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 16px;
+    color: #444;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
