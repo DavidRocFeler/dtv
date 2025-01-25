@@ -4,13 +4,10 @@ import { coverTextArray } from '@/helpers/TextCover.helpers';
 import { movieDataHelpers } from '@/helpers/MovieData.helpers';
 import { IMovieDataProps } from '@/interface/globalTypes';
 
-const HomeView: React.FC = () => {
-  // Definir el tipo de chunks como un array de arrays de IMovieDataProps
+const LandingPage: React.FC = () => {
   const chunks: IMovieDataProps[][] = [];
 
-  // Dividir movieDataHelpers en 5 partes (cada una con 10 elementos)
-  const chunkSize = 10; // Tamaño de cada parte
-
+  const chunkSize = 10; 
   for (let i = 0; i < movieDataHelpers.length; i += chunkSize) {
     chunks.push(movieDataHelpers.slice(i, i + chunkSize));
   }
@@ -21,12 +18,12 @@ const HomeView: React.FC = () => {
         <SectionCover
           key={item.id}
           id={item.id}
-          text={item.text} // Pasar el texto del cover
-          items={chunks[index]} // Pasar la parte correspondiente de movieDataHelpers
+          text={item.text}
+          items={chunks[index]} 
         />
       ))}
     </div>
   );
 };
 
-export default HomeView;
+export default LandingPage;

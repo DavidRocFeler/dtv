@@ -1,8 +1,13 @@
 import { IMovieDataProps } from "@/interface/globalTypes";
- 
+
+const today = new Date().toISOString();
+const lastWeek = new Date(new Date().setDate(new Date().getDate() - 6)).toISOString();
+
 export const movieDataHelpers: IMovieDataProps[] = [
         {
             id: 1,
+            views: 10000,
+            lastViewed: today,
             section: 'Movies',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "Guardians of the Galaxy Vol. 2",
@@ -16,6 +21,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 2,
+            views: 20000,
+            lastViewed: today,
             section: 'Movies',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "Star Wars: Episode IV - A New Hope",
@@ -25,10 +32,12 @@ export const movieDataHelpers: IMovieDataProps[] = [
             genre: ["Action", "Adventure", "Fantasy", "Sci-Fi"],
             rate: '8.7',
             poster:
-            "https://m.media-amazon.com/images/M/MV5BOTA5NjhiOTAtZWM0ZC00MWNhLThiMzEtZDFkOTk2OTU1ZDJkXkEyXkFqcGdeQXVyMTA4NDI1NTQx._V1_SX300.jpg",
-        },
+              "https://m.media-amazon.com/images/M/MV5BOTA5NjhiOTAtZWM0ZC00MWNhLThiMzEtZDFkOTk2OTU1ZDJkXkEyXkFqcGdeQXVyMTA4NDI1NTQx._V1_SX300.jpg",
+          },
         {
             id: 3,
+            views: 8000,
+            lastViewed: today,
             section: 'Movies',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "The Lord of the Rings: The Fellowship of the Ring",
@@ -42,6 +51,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 4,
+            views: 9000,
+            lastViewed: today,
             section: 'Movies',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "The Lord of the Rings: The Fellowship of the Ring",
@@ -55,6 +66,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 5,
+            views: 7000,
+            lastViewed: today,
             section: 'Animes',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "Guardians of the Galaxy Vol. 2",
@@ -68,6 +81,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 6,
+            views: 5000,
+            lastViewed: today,
             section: 'Animes',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "Star Wars: Episode IV - A New Hope",
@@ -81,6 +96,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 7,
+            views: 2000,
+            lastViewed: today,
             section: 'Animes',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "The Lord of the Rings: The Fellowship of the Ring",
@@ -94,6 +111,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 8,
+            views: 11000,
+            lastViewed: today,
             section: 'Animes',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "The Lord of the Rings: The Fellowship of the Ring",
@@ -107,6 +126,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 9,
+            views: 15000,
+            lastViewed: today,
             section: 'Series',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "Guardians of the Galaxy Vol. 2",
@@ -120,6 +141,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 10,
+            views: 20000,
+            lastViewed: today,
             section: 'Series',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "Star Wars: Episode IV - A New Hope",
@@ -133,6 +156,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 11,
+            views: 12000,
+            lastViewed: today,
             section: 'Series',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "The Lord of the Rings: The Fellowship of the Ring",
@@ -146,6 +171,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 12,
+            views: 16000,
+            lastViewed: today,
             section: 'Series',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "The Lord of the Rings: The Fellowship of the Ring",
@@ -169,9 +196,13 @@ export const movieDataHelpers: IMovieDataProps[] = [
             rate: '7.7',
             poster:
                 "https://m.media-amazon.com/images/M/MV5BNjM0NTc0NzItM2FlYS00YzEwLWE0YmUtNTA2ZWIzODc2OTgxXkEyXkFqcGdeQXVyNTgwNzIyNzg@._V1_SX300.jpg",
+            views: 2000,
+            lastViewed: today,
         },
         {
             id: 14,
+            views: 4000,
+            lastViewed: today,
             section: 'Movies',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "Star Wars: Episode IV - A New Hope",
@@ -185,6 +216,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 15,
+            views: 6000,
+            lastViewed: today,
             section: 'Movies',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "The Lord of the Rings: The Fellowship of the Ring",
@@ -198,6 +231,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 16,
+            views: 3200,
+            lastViewed: today,
             section: 'Movies',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "The Lord of the Rings: The Fellowship of the Ring",
@@ -211,6 +246,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 17,
+            views: 7000,
+            lastViewed: today,
             section: 'Movies',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "Guardians of the Galaxy Vol. 2",
@@ -224,6 +261,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 18,
+            views: 5000,
+            lastViewed: today,
             section: 'Movies',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "Star Wars: Episode IV - A New Hope",
@@ -237,6 +276,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 19,
+            views: 2000,
+            lastViewed: today,
             section: 'Movies',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "The Lord of the Rings: The Fellowship of the Ring",
@@ -250,6 +291,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 20,
+            views: 100,
+            lastViewed: today,
             section: 'Movies',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "The Lord of the Rings: The Fellowship of the Ring",
@@ -263,6 +306,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 21,
+            views: 1000,
+            lastViewed: today,
             section: 'Movies',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "Guardians of the Galaxy Vol. 2",
@@ -276,6 +321,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 22,
+            views: 900,
+            lastViewed: today,
             section: 'Movies',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "Star Wars: Episode IV - A New Hope",
@@ -289,6 +336,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 23,
+            views: 8000,
+            lastViewed: today,
             section: 'Movies',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "The Lord of the Rings: The Fellowship of the Ring",
@@ -302,6 +351,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 24,
+            views: 1000,
+            lastViewed: today,
             section: 'Movies',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "The Lord of the Rings: The Fellowship of the Ring",
@@ -315,6 +366,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 25,
+            views: 2000,
+            lastViewed: today,
             section: 'Animes',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "Guardians of the Galaxy Vol. 2",
@@ -328,6 +381,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 26,
+            views: 6000,
+            lastViewed: lastWeek, 
             section: 'Animes',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "Star Wars: Episode IV - A New Hope",
@@ -341,6 +396,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 27,
+            views: 9000,
+            lastViewed: lastWeek, 
             section: 'Animes',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "The Lord of the Rings: The Fellowship of the Ring",
@@ -354,6 +411,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 28,
+            views: 8000,
+            lastViewed: lastWeek, 
             section: 'Animes',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "The Lord of the Rings: The Fellowship of the Ring",
@@ -367,6 +426,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 29,
+            views: 12000,
+            lastViewed: lastWeek, 
             section: 'Series',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "Guardians of the Galaxy Vol. 2",
@@ -380,6 +441,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 30,
+            views: 10000,
+            lastViewed: lastWeek, 
             section: 'Series',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "Star Wars: Episode IV - A New Hope",
@@ -393,6 +456,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 31,
+            views: 7000,
+            lastViewed: lastWeek, 
             section: 'Series',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "The Lord of the Rings: The Fellowship of the Ring",
@@ -406,6 +471,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 32,
+            views: 5000,
+            lastViewed: lastWeek, 
             section: 'Series',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "The Lord of the Rings: The Fellowship of the Ring",
@@ -419,6 +486,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 33,
+            views: 6000,
+            lastViewed: lastWeek, 
             section: 'Series',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "Guardians of the Galaxy Vol. 2",
@@ -432,6 +501,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 34,
+            views: 1000,
+            lastViewed: lastWeek, 
             section: 'Movies',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "Star Wars: Episode IV - A New Hope",
@@ -445,6 +516,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 35,
+            views: 900,
+            lastViewed: lastWeek, 
             section: 'Movies',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "The Lord of the Rings: The Fellowship of the Ring",
@@ -458,6 +531,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 36,
+            views: 700,
+            lastViewed: lastWeek, 
             section: 'Movies',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "The Lord of the Rings: The Fellowship of the Ring",
@@ -471,6 +546,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 37,
+            views: 200,
+            lastViewed: lastWeek, 
             section: 'Movies',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "Guardians of the Galaxy Vol. 2",
@@ -484,6 +561,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 38,
+            views: 11000,
+            lastViewed: lastWeek, 
             section: 'Movies',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "Star Wars: Episode IV - A New Hope",
@@ -497,6 +576,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 39,
+            views: 12000,
+            lastViewed: lastWeek, 
             section: 'Movies',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "The Lord of the Rings: The Fellowship of the Ring",
@@ -510,6 +591,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 40,
+            views: 10300,
+            lastViewed: lastWeek, 
             section: 'Movies',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "The Lord of the Rings: The Fellowship of the Ring",
@@ -523,6 +606,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 41,
+            views: 23000,
+            lastViewed: lastWeek, 
             section: 'Series',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "The Lord of the Rings: The Fellowship of the Ring",
@@ -536,6 +621,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 42,
+            views: 22000,
+            lastViewed: lastWeek, 
             section: 'Series',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "The Lord of the Rings: The Fellowship of the Ring",
@@ -549,6 +636,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 43,
+            views: 22000,
+            lastViewed: lastWeek, 
             section: 'Series',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "Guardians of the Galaxy Vol. 2",
@@ -562,6 +651,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 44,
+            views: 29000,
+            lastViewed: lastWeek, 
             section: 'Movies',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "Star Wars: Episode IV - A New Hope",
@@ -575,6 +666,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 45,
+            views: 27000,
+            lastViewed: lastWeek, 
             section: 'Movies',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "The Lord of the Rings: The Fellowship of the Ring",
@@ -588,6 +681,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 46,
+            views: 22000,
+            lastViewed: lastWeek, 
             section: 'Movies',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "The Lord of the Rings: The Fellowship of the Ring",
@@ -601,6 +696,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 47,
+            views: 21000,
+            lastViewed: lastWeek, 
             section: 'Movies',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "Guardians of the Galaxy Vol. 2",
@@ -614,6 +711,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 48,
+            views: 10000,
+            lastViewed: lastWeek, 
             section: 'Movies',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "Star Wars: Episode IV - A New Hope",
@@ -627,6 +726,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 49,
+            views: 900,
+            lastViewed: lastWeek, 
             section: 'Movies',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "The Lord of the Rings: The Fellowship of the Ring",
@@ -640,19 +741,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 50,
-            section: 'Movies',
-            review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
-            title: "The Lord of the Rings: The Fellowship of the Ring",
-            year: 2001,
-            director: "Peter Jackson",
-            duration: "2h 58min",
-            genre: ["Action", "Adventure", "Drama", "Fantasy"],
-            rate: '8.8',
-            poster:
-                "https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_SX300.jpg",
-        },
-        {
-            id: 50,
+            views: 10100,
+            lastViewed: lastWeek, 
             section: 'Series',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "Star Wars: Episode IV - A New Hope",
@@ -666,6 +756,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 51,
+            views: 14000,
+            lastViewed: lastWeek, 
             section: 'Series',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "The Lord of the Rings: The Fellowship of the Ring",
@@ -679,6 +771,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 52,
+            views: 15000,
+            lastViewed: lastWeek, 
             section: 'Series',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "The Lord of the Rings: The Fellowship of the Ring",
@@ -692,6 +786,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 53,
+            views: 16000,
+            lastViewed: lastWeek, 
             section: 'Series',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "Guardians of the Galaxy Vol. 2",
@@ -705,6 +801,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 54,
+            views: 17000,
+            lastViewed: lastWeek, 
             section: 'Movies',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "Star Wars: Episode IV - A New Hope",
@@ -718,6 +816,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 55,
+            views: 17000,
+            lastViewed: lastWeek, 
             section: 'Movies',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "The Lord of the Rings: The Fellowship of the Ring",
@@ -731,6 +831,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 56,
+            views: 19000,
+            lastViewed: lastWeek, 
             section: 'Movies',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "The Lord of the Rings: The Fellowship of the Ring",
@@ -744,6 +846,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 57,
+            views: 2000,
+            lastViewed: lastWeek, 
             section: 'Movies',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "Guardians of the Galaxy Vol. 2",
@@ -757,6 +861,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 58,
+            views: 12000,
+            lastViewed: lastWeek, 
             section: 'Movies',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "Star Wars: Episode IV - A New Hope",
@@ -770,6 +876,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 59,
+            views: 22000,
+            lastViewed: lastWeek, 
             section: 'Movies',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "The Lord of the Rings: The Fellowship of the Ring",
@@ -783,6 +891,8 @@ export const movieDataHelpers: IMovieDataProps[] = [
         },
         {
             id: 60,
+            views: 3000,
+            lastViewed: lastWeek, 
             section: 'Movies',
             review: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
             title: "The Lord of the Rings: The Fellowship of the Ring",

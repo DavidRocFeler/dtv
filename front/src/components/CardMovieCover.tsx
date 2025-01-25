@@ -1,3 +1,4 @@
+'use client'
 import { IMovieDataProps } from '@/interface/globalTypes'
 import React from 'react'
 import { useState, useEffect } from 'react';

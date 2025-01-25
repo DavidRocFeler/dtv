@@ -14,6 +14,12 @@ export interface IMovieDataProps {
     rate: string;
     poster: string;
     review: string;
+    views: number;
+    lastViewed: string;
+}
+ 
+export interface IListCardSectionProps {
+    section: IMovieDataProps['section']; 
 }
 
 export interface ICovertext {

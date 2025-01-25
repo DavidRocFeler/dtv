@@ -1,12 +1,12 @@
-import HomeView from '@/page/HomeView';
+import LandingPage from '@/pages/LandingPage';
 import React from 'react'
 
-const Home: React.FC = () => {
+const Landing: React.FC = () => {
   return (
     <div> 
-      <HomeView/>
+      <LandingPage/>
     </div>
   )
 }
 
-export default Home;
+export default Landing;

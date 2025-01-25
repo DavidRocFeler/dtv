@@ -3,7 +3,7 @@ import ListCardScroll from './ListCardScroll';
 import { ICovertext, IMovieDataProps } from '@/interface/globalTypes';
 
 interface SectionCoverProps extends ICovertext {
-  items: IMovieDataProps[]; // Añadir la prop items
+  items: IMovieDataProps[]; 
 }
 
 const SectionCover: React.FC<SectionCoverProps> = ({ text, items }) => {
@@ -24,7 +24,6 @@ const SectionCover: React.FC<SectionCoverProps> = ({ text, items }) => {
         </div>
       </div>
 
-      {/* Pasar items a ListCardScroll */}
       <ListCardScroll items={items} />
 
       <svg height="10" width="100%" className='absolute bottom-0'>
