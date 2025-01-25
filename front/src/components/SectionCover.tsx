@@ -27,7 +27,7 @@ const SectionCover: React.FC<SectionCoverProps> = ({ text, items }) => {
       <ListCardScroll items={items} />
 
       <svg height="10" width="100%" className='absolute bottom-0'>
-        <line x1="0" y1="0" x2="100%" y2="0" className='stroke-[#333333] stroke-opacity-50 stroke-[20]' />
+        <line x1="0" y1="0" x2="100%" y2="0" className='stroke-[#0C1A62] stroke-opacity-50 stroke-[5]' />
       </svg>
     </section>
   );
