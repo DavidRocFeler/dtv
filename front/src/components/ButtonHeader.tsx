@@ -1,10 +1,12 @@
 import { AuthButtonProps } from '@/interface/globalTypes'
 import React from 'react'
+import styles from '../styles/ButtonHeader.module.css';
+
 
 const ButtonHeader:React.FC<AuthButtonProps>= ({text,handlelogin}) => {
   return (
     <div>
-      <button className='bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded' onClick={handlelogin}>
+      <button className={`${styles.ButtonGradient}`} onClick={handlelogin}>
         {text}
       </button>
     </div>

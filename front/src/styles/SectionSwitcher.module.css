@@ -1,0 +1,18 @@
+/* Ocultar SectionSwitcher en dispositivos móviles */
+@media (max-width: 768px) {
+    .sectionSwitcherContainer {
+      display: none;
+    }
+  }
+
+  /* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+    .header__logo {
+      flex-direction: column; /* Cambia la dirección a columna en móviles */
+      align-items: flex-start; /* Alinea los elementos a la izquierda */
+    }
+  
+    .auth-buttons {
+      margin-top: 1rem; /* Agrega un margen superior en móviles */
+    }
+  }
