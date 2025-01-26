@@ -1,5 +1,3 @@
-import React from "react";
-
 
 interface SearchIconProps {
     className?: string; // Acepta className como prop opcional
