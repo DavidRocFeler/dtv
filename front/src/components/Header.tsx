@@ -9,11 +9,15 @@ import Link from 'next/link'; // Importa Link si no lo tienes
 
 const Header: React.FC = () => {
   const [isLoggerIn, setIsLoggedIn] = useState(false);
+  const [isSearchExpanded, setIsSearchExpanded] = useState(false); // Estado para controlar la expansión de la lupa
 
   const handlelogin = () => {
     setIsLoggedIn(true);
   };
 
+  const handleSearchExpand = (expanded: boolean) => {
+    setIsSearchExpanded(expanded);
+  };
 
   // Si el componente está hidratado, retorna la estructura completa
   return (
@@ -34,29 +38,33 @@ const Header: React.FC = () => {
         {!isLoggerIn ? (
           // Botones de inicio de sesión y registro
           <div className="flex flex-row items-center space-x-4 mr-4">
-            <ButtonHeader
-              text={'Login in'}
-              handlelogin={handlelogin}
-            />
+          
+                <ButtonHeader
+                  text={'Login in'}
+                  handlelogin={handlelogin}
+                />
+             <div className="hidden s:block">
             <ButtonHeader
               text={'Sign up'}
               handlelogin={handlelogin}
             />
+            </div>
           </div>
         ) : (
           // Contenido cuando el usuario ha iniciado sesión
           <div className="flex flex-row items-center flex-grow justify-center">
-            {/* Ocultar SectionSwitcher en dispositivos móviles */}
-            <div className="hidden md:flex flex-row items-center justify-center flex-grow">
+            {/* SectionSwitcher: Solo se oculta en móviles cuando la lupa está expandida */}
+            <div className={`${isSearchExpanded ? 'hidden' : 'flex'} md:flex flex-row items-center justify-center flex-grow`}>
               <SectionSwitcher />
             </div>
 
             {/* SearchBar y DropDown */}
-            <div className="flex flex-row items-center space-x-4 ml-auto mr-[0] 
-              sm:mr-[2rem] 
-            bg-red-500">
-              <SearchBar />
-              <DropDown />
+            <div className="flex flex-row items-center space-x-4 ml-auto mr-[0] sm:mr-[2rem]">
+              <SearchBar onExpand={handleSearchExpand} />
+              {/* DropDown: Solo se oculta en móviles cuando la lupa está expandida */}
+              <div className={`${isSearchExpanded ? 'hidden' : 'flex'} md:flex`}>
+                <DropDown />
+              </div>
             </div>
           </div>
         )}
@@ -65,4 +73,4 @@ const Header: React.FC = () => {
   );
 };
 
-export default Header;
+export default Header;

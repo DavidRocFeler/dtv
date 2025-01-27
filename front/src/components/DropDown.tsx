@@ -41,7 +41,7 @@ const DropDown = () => {
 
       {/* Opciones del menú */}
       {isOpen && (
-        <ul className="absolute top-full left-0 mt-2 w-48 bg-black rounded shadow-lg z-50">
+        <ul className="absolute  rigth-[2rem] mt-2 w-fit bg-black rounded shadow-lg z-50">
           {options.map((option, index) => (
             <li
               key={index}
