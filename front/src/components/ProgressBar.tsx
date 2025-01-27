@@ -10,7 +10,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ activeStep, onButtonClick }) 
   return (
     <div className="w-full flex flex-col items-center gap-5 mt-[2rem] mb-[2rem]">
       {/* Botones */}
-      <div className="flex gap-x-[10rem] text-[1rem]">
+      <div className="flex flex-row w-full justify-around text-[1rem] xxxlll:text-[1.2rem] ">
         {['Day', 'Week'].map((label, index) => (
           <button
             key={label}

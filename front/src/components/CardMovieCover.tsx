@@ -4,25 +4,35 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 
 const CardMovieCover: React.FC<IMovieDataProps> = ({title, year, director, duration, genre, rate, poster, section, review}) => {
-    const [truncatedReview, setTruncatedReview] = useState(review);
-    const formattedGenres = genre.join(' - ');
-    
-    const truncText = (text: string, maxWords: number = 13): string => {
-        const words = text.split(' ');
-        if (words.length > maxWords) {
-          return words.slice(0, maxWords).join(' ') + '...';
-        }
-        return text;
-      };
+  const [truncatedReview, setTruncatedReview] = useState(review);
+  const formattedGenres = genre.join(' - ');
 
-      useEffect(() => {
-        console.log('Viewport width:', window.innerWidth);
-        if (window.innerWidth <= 400) {
-          setTruncatedReview(truncText(review));
-        } else {
-          setTruncatedReview(review);
-        }
-      }, [review]);
+  const truncText = (text: string, maxWords: number = 13): string => {
+    const words = text.split(' ');
+    if (words.length > maxWords) {
+      return words.slice(0, maxWords).join(' ') + '...';
+    }
+    return text;
+  };
+
+  const handleResize = () => {
+    console.log('Viewport width (ancho dispositivo):', window.innerWidth);
+    if (window.innerWidth <= 400) {
+      setTruncatedReview(truncText(review));
+    } else {
+      setTruncatedReview(review);
+    }
+  };
+
+  useEffect(() => {
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [review]); 
     
   return (
         <div className='relative flex items-center justify-center cursor-pointer'>

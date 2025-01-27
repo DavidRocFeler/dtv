@@ -1,0 +1,17 @@
+@media (min-width: 1070) {
+    .MovieCover {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); 
+        grid-template-rows: repeat(8, 1fr); 
+    }
+    .MovieContent {
+        width: 60%;
+    }
+}
+@media (min-width: 1400) {
+    .MovieCover {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(6, 1fr); 
+    }
+}
