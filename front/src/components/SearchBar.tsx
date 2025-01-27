@@ -16,14 +16,14 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="flex items-center justify-end">
+    <div className="flex items-center justify-end relative">
       {/* Input de búsqueda */}
       <input
         ref={inputRef}
         type="text"
         placeholder={isExpanded ? "Search..." : ""}
-        className={`bg-transparent text-white placeholder-gray-400 border-2 border-[#4D4D4D] rounded-lg outline-none transition-all duration-300 ease-in-out focus:border-[#E9E9E9] focus:ring-2 focus:ring-[#E9E9E9] ${
-          isExpanded ? "w-32 md:w-48 opacity-100 px-4 py-2" : "w-0 opacity-0 px-0"
+        className={`absolute  right-[3rem]  bg-transparent text-white placeholder-gray-400 border-2 border-[#4D4D4D] rounded-lg outline-none transition-all duration-300 ease-in-out focus:border-[#E9E9E9] focus:ring-2 focus:ring-[#E9E9E9] ${
+          isExpanded ? "w-[6rem] sm:w-32 md:w-48 opacity-100 px-2 py-1 sm:px-4 sm:py-2" : "w-0 opacity-0 px-0"
         }`}
       />
       {/* Ícono de lupa */}
@@ -37,4 +37,4 @@ const SearchBar = () => {
   );
 };
 
-export default SearchBar;
+export default SearchBar;
