@@ -1,32 +1,71 @@
-/* Contenedor principal */
-.GridContainer {
-    padding: 20px;
-    background-color: black;
-    border-radius: 8px;
+.footer {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #ffffff;
+  padding: 2rem;
+  width: 100%;
+}
+
+.linksContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  background-color: red;
+  width: fit-content;
+}
+
+.link {
+  color: #ffffff;
+  background-color: blue;
+  width: 100%;
+  text-decoration: none;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+@media (min-width:750px){ 
+  .linksContainer{
+    background-color:gold;
   }
-  
-  /* Título */
-  .Title {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 20px;
+  .link{
+    font-size: 0.8rem;
   }
-  
-  /* Tabla con Grid */
-  .GridTable {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);; /* Columnas flexibles */
-    gap: 10px; /* Espacio entre elementos */
-  }
-  
-  /* Elementos de la cuadrícula */
-  .GridItem {
-    padding: 15px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    text-align: center;
-    font-size: 16px;
-    color: #444;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
+}
+
+.link:hover {
+  opacity: 1;
+}
+
+.socialSection {
+  display: grid;
+  gap: 1rem;
+  justify-items: center;
+}
+
+.followTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.socialLinks {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 1.5rem;
+}
+
+.socialLink {
+  color: #ffffff;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.socialLink:hover {
+  opacity: 1;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 0.8rem;
+  opacity: 0.6;
+}

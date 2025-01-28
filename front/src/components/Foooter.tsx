@@ -6,6 +6,7 @@ import { FaqsHelpers } from '../helpers/Faqs.helpers';
 const Foooter:React.FC = () => {
   return (
     <div className='flex flex-row'>
+     <div className='hidden mdd:block'>
      { FaqsHelpers.map((item)=>
         (<FAQComponent
           key={item.id} 
@@ -15,6 +16,8 @@ const Foooter:React.FC = () => {
         />)
       ) 
     }
+     </div>
+     
       <SideSecction/>
     </div>
   )
