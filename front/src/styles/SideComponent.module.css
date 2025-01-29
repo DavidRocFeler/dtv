@@ -9,13 +9,11 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
-  background-color: red;
   width: fit-content;
 }
 
 .link {
   color: #ffffff;
-  background-color: blue;
   width: 100%;
   text-decoration: none;
   font-size: 0.9rem;
@@ -24,9 +22,7 @@
 }
 
 @media (min-width:750px){ 
-  .linksContainer{
-    background-color:gold;
-  }
+  
   .link{
     font-size: 0.8rem;
   }

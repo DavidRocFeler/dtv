@@ -3,7 +3,7 @@ import styles from '../styles/SideComponent.module.css';
 import Link from 'next/link';
 
 const SideSecction: React.FC = () => {
-  return (
+  return (  
     <footer className={styles.footer}>
       <div className={styles.linksContainer}>
           <Link href="/cookies" className={styles.link}>Cookies</Link>
