@@ -28,7 +28,7 @@ export interface ICovertext {
 }
 
 export interface IFaq{
-    id?:number,
+    id?:number | any,
     question:string,
     answer:string
 }
