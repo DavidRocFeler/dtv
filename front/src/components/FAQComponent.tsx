@@ -14,11 +14,11 @@ const FAQComponent: React.FC<FAQComponentProps> = ({
   onClick 
 }) => {
   return (
-    <div className={styles.FaqContainer}>
-      <div className={styles.FaqItem}>
-        <div className={styles.QuestionWrapper}>
+    <div className='w-[100%] pb-[1rem] text-[0.9rem] opacity-[0.8]'>
+ 
+        <div className='w-[90%] flex flex-row'>
           {/* Contenedor de la pregunta (sin evento de clic) */}
-          <h3 className={styles.Question}>{question}</h3>
+          <h3 >{question}</h3>
           
           {/* Flecha interactiva */}
           <span 
@@ -28,10 +28,12 @@ const FAQComponent: React.FC<FAQComponentProps> = ({
             ▼
           </span>
         </div>
+        
+        <div className='w-[80%]'>
+          {/* Respuesta (se muestra según isActive) */}
+          {isActive && <p className='italic font-light'>{answer}</p>}
+        </div>
 
-        {/* Respuesta (se muestra según isActive) */}
-        {isActive && <p className={styles.Answer}>{answer}</p>}
-      </div>
     </div>
   );
 };
