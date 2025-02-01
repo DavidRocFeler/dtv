@@ -1,47 +1,14 @@
-.FaqContainer {
-  margin-bottom: 1rem;
-  margin-left: 2rem;
-
-}
-
-.QuestionWrapper {
-  display: flex;
-  align-items: center;
-  cursor: default; /* El texto de la pregunta no es clickeable */
-  background-color: aqua;
-  
-}
-
-.Question {
-  margin: 0;
-  font-weight: normal;
-  color: #ffffff;
-  width: 100%;
-  text-decoration: none;
-  font-size: 0.9rem;
-  opacity: 0.8;
-  transition: opacity 0.2s;
-}
-
 .Arrow {
-  cursor: pointer; /* Solo la flecha es clickeable */
-  transition: transform 0.3s ease;
-  padding: 0.5rem;
-  user-select: none; /* Evita que se seleccione el texto de la flecha */
-  background-color: red;
-}
-
-.Arrow:hover {
-  color: #666;
-}
-
-.Active {
-  transform: rotate(180deg); /* Animación de la flecha */
-}
-
-.Answer {
-  padding: 1rem 0;
-  font-size: 0.7rem;
-  width: 50%;
-  background-color: red;
-}
+    margin-left: auto;
+    cursor: pointer; /* Solo la flecha es clickeable */
+    transition: transform 0.3s ease;
+    user-select: none; /* Evita que se seleccione el texto de la flecha */
+  }
+  
+  .Arrow:hover {
+    color: #666;
+  }
+  
+  .Active {
+    transform: rotate(180deg); /* Animación de la flecha */
+  }
