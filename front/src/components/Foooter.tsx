@@ -3,6 +3,7 @@ import FAQComponent from './FAQComponent';
 import SideSecction from './FooterSecction';
 import { FaqsHelpers } from '../helpers/Faqs.helpers';
 import { useState } from 'react';
+import FollowNetwork from './FollowNetwork';
 
 const Foooter: React.FC = () => {
   const [activeId, setActiveId] = useState<number | null>(null);
@@ -13,8 +14,8 @@ const Foooter: React.FC = () => {
   };
 
   return (
-    <div className='flex flex-row'>
-      <div className='hidden mdd:block'>
+    <div className='flex flex-col mdd:flex-row'>
+      <div className='hidden  mdd:block'>
         {FaqsHelpers.map((item) => (
           <FAQComponent
             key={item.id}
@@ -25,7 +26,12 @@ const Foooter: React.FC = () => {
           />
         ))}
       </div>
-      <SideSecction />
+      <div className='flex flex-col items-start justify-start'>
+        <SideSecction />
+        <FollowNetwork/>
+      </div>
+      
+
     </div>
   );
 };

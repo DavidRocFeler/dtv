@@ -17,27 +17,7 @@ const SideSecction: React.FC = () => {
           <Link href="/upload-stream" className={styles.link}>Upload Stream</Link>
       </div>
 
-      <div className={styles.socialSection}>
-        <h3 className={styles.followTitle}>FOLLOW</h3>
-        <div className={styles.socialLinks}>
-          <Link href="#" className={styles.socialLink}>
-            <i className="fab fa-facebook"></i>
-          </Link>
-          <Link href="#" className={styles.socialLink}>
-            <i className="fab fa-instagram"></i>
-          </Link>
-          <Link href="#" className={styles.socialLink}>
-            <i className="fab fa-pinterest"></i>
-          </Link>
-          <Link href="#" className={styles.socialLink}>
-            <i className="fab fa-twitter"></i>
-          </Link>
-        </div>
-      </div>
-
-      <div className={styles.copyright}>
-        2025 Stream·d | developed by Star14
-      </div>
+    
     </footer>
   );
 };
