@@ -6,6 +6,8 @@ import DropDown from './DropDown';
 import SearchBar from './SearchBar';
 import SectionSwitcher from './SectionSwitcher';
 import Link from 'next/link'; // Importa Link si no lo tienes
+import AuthModal from './AuthModal';
+
 
 const Header: React.FC = () => {
   const [isLoggerIn, setIsLoggedIn] = useState(false);
@@ -21,7 +23,7 @@ const Header: React.FC = () => {
 
   // Si el componente está hidratado, retorna la estructura completa
   return (
-    <header className="bg-black text-white py-[0.6rem]">
+    <header className="bg-black text-white py-[0.6rem] relative">
       <div className="px-4 flex flex-row items-center justify-between">
         {/* Logo */}
         <div className="flex-shrink-0 ml-[0rem]">
@@ -42,12 +44,13 @@ const Header: React.FC = () => {
                 <ButtonHeader
                   text={'Login in'}
                   handlelogin={handlelogin}
+                  
                 />
              <div className="hidden s:block">
-            <ButtonHeader
-              text={'Sign up'}
-              handlelogin={handlelogin}
-            />
+              <ButtonHeader
+                text={'Sign up'}
+                handlelogin={handlelogin}
+              />
             </div>
           </div>
         ) : (
@@ -69,6 +72,7 @@ const Header: React.FC = () => {
           </div>
         )}
       </div>
+      <AuthModal/>
     </header>
   );
 };

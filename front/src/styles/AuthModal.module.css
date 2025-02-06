@@ -1,0 +1,284 @@
+:global(*),
+:global(*::before),
+:global(*::after) {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* Elimina estilos por defecto del navegador */
+}
+
+/* Reset adicional para elementos comunes */
+:global(html), :global(body) {
+  width: 100%;
+  height: 100vh;
+}
+
+:global(ul), :global(ol) {
+  list-style: none;
+}
+
+:global(a) {
+  text-decoration: none;
+  color: inherit;
+}
+
+:global(img) {
+  max-width: 100%;
+  display: block;
+}
+
+:global(button), 
+:global(input), 
+:global(textarea) {
+  font-family: inherit;
+  border: none;
+  background: none;
+}
+
+:global(html) {
+  font-size: 62.5%; /* 62.5% de 16px (tamaño base) = 10px */
+}
+
+:global(body) {
+  font-size: 1.6rem; /* Equivale a 16px (1.6rem × 10px) */
+  background: linear-gradient(to left, #000 0%, #0E1F76 100%);
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial;
+}
+
+/* Clases locales */
+.contanier-modal-sing-up {
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+  color: white;
+}
+
+.button-close {
+  top: 2rem;
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  background-color: #000000;
+  border-radius: 50%;
+  position: relative;
+}
+
+.icon-button-close {
+  position: absolute;
+  top: 35%;
+  left: 35%;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.contenier-form-sing-up {
+  min-height: 40rem;
+  background-color: #000;
+}
+
+.column-1-form,
+.column-1-login {
+  margin-top: 5rem;
+  padding: 3rem;
+}
+
+.title-form {
+  color: white;
+}
+
+.title-form img {
+  width: 4rem;
+}
+
+.title-form {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 1.2rem;
+}
+
+.input-sing-up {
+  padding-top: 2rem;
+}
+
+.input-sing-up label {
+  font-size: 1.2rem;
+}
+
+.sign-up-email {
+  margin-top: 3rem;
+  border: #0C1A62 solid 4px;
+  border-radius: 10px;
+  width: 100%;
+  padding: 1rem;
+  color: white;
+}
+
+.contenier-form-sing-up p {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.contenier-social-media {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+}
+
+.btn-sing-up,
+.btn-continue,
+.btn-log-in {
+  margin-top: 3rem;
+  background: linear-gradient(to right, #0E1F75 0%, #081142 100%);
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.column-2-form {
+  display: none;
+}
+
+@media (min-width: 740px) {
+  .contenier-form-sing-up {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 5rem;
+  }
+
+  .column-2-form {
+    display: flex;
+    background-image: url('/imageForm.png');
+    background-size: cover;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+    align-items: center;
+    font-size: 1rem;
+  }
+}
+
+.item-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.column-1-password {
+  display: none;
+  margin-top: 5rem;
+  padding: 3rem;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.visible {
+  display: block !important;
+}
+
+.text-password {
+  font-size: 1rem;
+  margin-top: 5rem;
+  line-height: 0.2;
+}
+
+.input-sing-up-password {
+  margin-top: 0;
+}
+
+.sign-up-email-password {
+  border: #0C1A62 solid 4px;
+  border-radius: 10px;
+  width: 100%;
+  padding: 1rem;
+  color: white;
+}
+
+.text-email {
+  margin-top: 5rem;
+  margin-bottom: 0;
+  text-decoration: underline;
+}
+
+.inputs-password {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.information-password {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1rem;
+  gap: 1rem;
+}
+
+.icon-password {
+  height: 1rem;
+  width: 1rem;
+  border: 2px solid #0C1A62;
+  border-radius: 50%;
+}
+
+.infomation-item {
+  display: flex;
+  gap: 1rem;
+}
+
+.information-politics {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+.button-login {
+  font-weight: bold;
+  color: aliceblue;
+}
+
+.column-1-login {
+  display: none;
+}
+
+.title-login {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+}
+
+.inputs-login {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+#password {
+  margin-top: 1rem;
+}
+
+.btn-create-account {
+  background: transparent;
+  padding: 1.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  border: 2px solid white;
+  cursor: pointer;
+  width: 100%;
+  color: white;
+}

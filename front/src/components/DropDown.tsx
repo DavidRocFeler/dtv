@@ -3,7 +3,7 @@ import { FaChevronDown } from "react-icons/fa"; // Importa el ícono
 
 type Option = string;
 
-const DropDown = () => {
+const DropDown:React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [selectedOption, setSelectedOption] = useState<Option>("Menu");
   const dropdownRef = useRef<HTMLDivElement>(null);

@@ -32,3 +32,7 @@ export interface IFaq{
     question:string,
     answer:string
 }
+
+export interface IOptionsProps{
+        Option:string;
+}
