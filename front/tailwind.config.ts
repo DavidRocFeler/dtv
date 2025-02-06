@@ -10,6 +10,7 @@ export default {
     extend: {
       backgroundImage: {
         'custom-gradient': 'linear-gradient(to bottom, #32408A 20%, #112177 100%)',
+        'blue-gradient':'linear-gradient(to left, #000 0%, #0E1F76 100%)',
       },
       screens: {
         xxs: '350px',
