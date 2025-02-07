@@ -28,7 +28,7 @@ const SingUp: React.FC<ISignUpProps> = ({ setIsSignUpModalOpen, setIsAuthModalOp
     };
 
   return (
-    <div className="flex w-full fixed z-[9999] text-white top-0 bg-blue-gradient min-h-[100vh] justify-center items-center">
+    <div className="flex w-full fixed z-[1111] text-white top-0 bg-blue-gradient min-h-[100vh] justify-center items-center">
 
         <button 
             onClick={() => setIsSignUpModalOpen(false)}

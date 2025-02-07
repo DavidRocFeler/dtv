@@ -14,7 +14,7 @@ const Foooter: React.FC = () => {
   };
 
   return (
-    <div className='flex flex-col pb-[1rem] pt-[2rem] relative'>
+    <div className='flex flex-col pb-[1rem] pt-[2rem] relative '>
 
       <div className='flex flex-row'>
         <div className='hidden  mdd:block w-[50%] pl-[1rem]'>

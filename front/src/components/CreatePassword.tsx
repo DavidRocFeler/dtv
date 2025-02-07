@@ -9,7 +9,7 @@ const CreatePassword: React.FC<ICreatePasswordProps> = ({ setIsCreatePasswordOpe
     
 
   return (
-    <div className="flex w-full fixed z-[9999] text-white top-0 bg-blue-gradient min-h-[100vh] justify-center items-center">
+    <div className="flex w-full fixed z-[1111] text-white top-0 bg-blue-gradient min-h-[100vh] justify-center items-center">
 
         <button 
             onClick={handleCloseModal}

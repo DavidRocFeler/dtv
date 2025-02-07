@@ -42,7 +42,7 @@ export const HomeView: React.FC = () => {
 
   return (
     <>
-        <div className='pt-[10rem] pb-[2rem] md:m-0 
+        <div className='pt-[10rem] pb-[2rem] md:m-0 bg-gradient-to-r from-[#141414] to-black
         flex flex-col s:flex-row'>
           <div className={`${styles.MovieContent} 
           m-auto s:m-0 s:ml-[1rem] xl:ml-[3rem] xxl:ml-[5rem] xxxl:ml-[4rem]

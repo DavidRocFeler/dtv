@@ -26,9 +26,9 @@ const SearchBar: React.FC<{ onExpand: (expanded: boolean) => void }> = ({ onExpa
         ref={inputRef}
         type="text"
         placeholder={isExpanded ? "Search..." : ""} // Muestra el placeholder solo cuando está expandido
-        className={`absolute right-[3rem] bg-transparent text-white placeholder-gray-400 border-2 border-[#4D4D4D] rounded-lg outline-none transition-all duration-300 ease-in-out focus:border-[#E9E9E9] focus:ring-2 focus:ring-[#E9E9E9] ${
+        className={`absolute right-[3rem] text-[0.9rem] bg-transparent text-white placeholder-gray-400 border-2 border-[#4D4D4D] rounded-lg outline-none transition-all duration-300 ease-in-out focus:border-[#E9E9E9] focus:ring-2 focus:ring-[#E9E9E9] ${
           isExpanded
-            ? "w-[10rem] sm:w-32 md:w-48 opacity-100 px-2 py-1 sm:px-4 sm:py-2" // Estilos cuando está expandido
+            ? "w-[10rem] sm:w-[12rem] md:w-[10rem] opacity-100 px-3 py-1 " // Estilos cuando está expandido
             : "w-0 opacity-0 px-0" // Estilos cuando está contraído
         }`}
       />
@@ -38,7 +38,7 @@ const SearchBar: React.FC<{ onExpand: (expanded: boolean) => void }> = ({ onExpa
         onClick={handleSearchClick}
         className="p-2 text-gray-400 hover:text-gray-200 focus:outline-none ml-4" // Aumentamos el margen izquierdo (ml-4)
       >
-        <SearchIcon className="w-6 h-6" />
+        <SearchIcon className="w-[1.3rem] h-[1.3rem]" />
       </button>
     </div>
   );

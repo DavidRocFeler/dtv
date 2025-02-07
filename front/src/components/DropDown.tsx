@@ -1,17 +1,25 @@
 import { useState, useRef, useEffect } from "react";
-import { FaChevronDown } from "react-icons/fa"; // Importa el ícono
+import { useRouter } from 'next/navigation';
+import { logout } from "@/utils/logout"; // ✅ Importamos la función logout
 
 type Option = string;
 
-const DropDown:React.FC = () => {
+const DropDown: React.FC = () => {
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [selectedOption, setSelectedOption] = useState<Option>("Menu");
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const options: Option[] = ["Home", "Wallet", "User", "Help", "Upload", "Log out"];
 
+  const handleLogout = () => {
+    logout(); // ✅ Elimina el token de las cookies y actualiza Zustand
+    router.push("/"); // ✅ Redirige al usuario al home
+  };
+
   const handleOptionClick = (option: Option) => {
-    setSelectedOption(option);
+    if (option === "Log out") {
+      handleLogout();
+    }
     setIsOpen(false);
   };
 
@@ -30,18 +38,19 @@ const DropDown:React.FC = () => {
 
   return (
     <div className="relative" ref={dropdownRef}>
-      {/* Botón del menú */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className={`bg-custom-gradient text-white px-4 py-2 rounded flex items-center justify-between`}
+      {/* 🔥 SVG que funciona como botón en todos los dispositivos */}
+      <button 
+        onClick={() => setIsOpen(!isOpen)} 
+        className="flex items-center justify-center"
       >
-        {selectedOption}
-        <FaChevronDown className="ml-2 w-4 h-4" /> {/* Ícono más pequeño */}
+        <svg width="24" height="18" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 2H18M0 7.2H15.6522M0 12H12.5217" stroke="white" strokeWidth="3"/>
+        </svg>
       </button>
 
       {/* Opciones del menú */}
       {isOpen && (
-        <ul className="absolute  rigth-[2rem] mt-2 w-fit bg-black rounded shadow-lg z-50">
+        <ul className="absolute right-0 mt-2 w-fit bg-black rounded shadow-lg z-50">
           {options.map((option, index) => (
             <li
               key={index}

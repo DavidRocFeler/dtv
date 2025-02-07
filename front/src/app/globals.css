@@ -146,6 +146,14 @@ select {
     display: none;
 }
 
+.swal2-container {
+    z-index: 9999 !important; /* 🔥 Asegura que Swal.fire siempre esté arriba */
+}
+
+.swal2-popup {
+    z-index: 10000 !important; /* 🔥 Más alto que todo */
+}
+
 /* ------------------------------------ */
 /* End of Reset CSS */
 /* ------------------------------------ */

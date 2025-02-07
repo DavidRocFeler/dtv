@@ -13,7 +13,7 @@ const LandingPage: React.FC = () => {
   }
 
   return (
-    <div className='pt-[3rem]'>
+    <div className='pt-[3rem] bg-black'>
       {coverTextArray.map((item, index) => (
         <SectionCover
           key={item.id}
