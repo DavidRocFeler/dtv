@@ -42,7 +42,7 @@ export const HomeView: React.FC = () => {
 
   return (
     <>
-        <div className='pt-[5rem] pb-[2rem] md:m-0 
+        <div className='pt-[10rem] pb-[2rem] md:m-0 
         flex flex-col s:flex-row'>
           <div className={`${styles.MovieContent} 
           m-auto s:m-0 s:ml-[1rem] xl:ml-[3rem] xxl:ml-[5rem] xxxl:ml-[4rem]
@@ -73,3 +73,5 @@ export const HomeView: React.FC = () => {
     </>
   );
 };
+
+export default HomeView;

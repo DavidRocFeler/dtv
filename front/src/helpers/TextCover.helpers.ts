@@ -19,6 +19,6 @@ export const coverTextArray: ICovertext[] = [
     },
     {
         id: 5,
-        text: 'Step into a new experience with StreamD',
+        text: 'Step into a new experience with DTV',
     },
 ]

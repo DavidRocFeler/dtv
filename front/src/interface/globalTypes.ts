@@ -36,3 +36,20 @@ export interface IFaq{
 export interface IOptionsProps{
         Option:string;
 }
+  
+export interface IAuthProps {
+    setIsAuthModalOpen: (value: boolean) => void;
+    setIsSignUpModalOpen: (value: boolean) => void;
+  }
+  
+export  interface ISignUpProps {
+    setIsSignUpModalOpen: (value: boolean) => void;
+    setIsAuthModalOpen: (value: boolean) => void;
+    setIsCreatePasswordOpen: (value: boolean) => void;
+    setUserEmail: (email: string) => void;
+  }
+export interface ICreatePasswordProps {
+    setIsCreatePasswordOpen: (value: boolean) => void;
+    userEmail: string;
+    setIsSignUpModalOpen: (value: boolean) => void;
+  }
