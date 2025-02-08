@@ -1,12 +1,20 @@
+// AuthProvider.tsx
 "use client";
-
 import { useEffect } from "react";
-import { initializeAuthState } from "@/store/useAuthStore";
+import { useAuthStore } from "@/store/useAuthStore";
+import Cookies from "js-cookie";
 
 export default function AuthProvider({ children }: { children: React.ReactNode }) {
+  const { setIsAuthenticated } = useAuthStore();
+
   useEffect(() => {
-    initializeAuthState(); // ✅ Sincroniza Zustand con cookies al inicio
+    const checkAuth = () => {
+      const token = Cookies.get("authToken");
+      setIsAuthenticated(!!token);
+    };
+
+    checkAuth();
   }, []);
 
-  return <>{children}</>; 
+  return <>{children}</>;
 }

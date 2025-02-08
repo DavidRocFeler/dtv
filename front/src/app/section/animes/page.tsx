@@ -1,10 +1,13 @@
+import ProtectedRoute from '@/app/ProtectedRoute';
 import AnimesView from '@/pages/AnimesView'
 import React from 'react'
 
 const Animes: React.FC = () => {
   return (
     <div>
-        <AnimesView/>
+        <ProtectedRoute>
+          <AnimesView/>
+        </ProtectedRoute>
     </div>
   )
 }

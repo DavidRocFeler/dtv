@@ -29,51 +29,32 @@ const Login: React.FC<IAuthProps> = ({
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-
     try {
-        const response = await loginApiRequest(userData);
-
-        // ✅ Verificamos si la respuesta es válida antes de continuar
-        if (!response) {
-            console.warn("Login fallido, revisa las credenciales.");
-            return;
-        }
-
-        const { token, user } = response;
-
-        // ✅ Encriptamos el token antes de almacenarlo
-        const hashedToken = jwtEncode(token);
-        
-        // ✅ Guardamos el token en cookies de manera segura
-        Cookies.set("authToken", hashedToken, { 
-            secure: true, 
-            sameSite: "strict",
-            expires: 7 // Expira en 7 días
-        });
-
-        // ✅ Actualizamos el estado global de autenticación
-        setUser(user);
-        setIsAuthenticated(true);
-        router.push('/home')
-        // ✅ Cerramos el modal de login
-        setIsAuthModalOpen(false);
-
+      const response = await loginApiRequest(userData);
+      
+      if (!response || !response.token) {
+        throw new Error("Login fallido");
+      }
+  
+      // Solo guardamos el token en cookies
+      Cookies.set("authToken", response.token, {
+        secure: true,
+        sameSite: "strict",
+        expires: 7
+      });
+  
+      setIsAuthenticated(true);
+      router.push('/home');
+      setIsAuthModalOpen(false);
     } catch (error) {
-        console.error("Login failed:", error);
-
-        // ✅ Mostramos un mensaje de error con SweetAlert
-        Swal.fire({
-          icon: "error",
-          title: "Error de autenticación",
-          text: "Email o contraseña incorrectos.",
-          confirmButtonColor: "#d33",
-          customClass: {
-              popup: "custom-swal-popup" 
-          },
-          backdrop: true 
+      Swal.fire({
+        icon: "error",
+        title: "Error de autenticación",
+        text: "Email o contraseña incorrectos.",
+        confirmButtonColor: "#d33",
       });
     }
-};
+  };
 
   const handleCreateAccount = () => {
     setIsAuthModalOpen(false);

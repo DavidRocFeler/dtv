@@ -8,7 +8,7 @@ import Link from "next/link";
 import SingUp from "./SingUp";
 import Login from "./LogIn";
 import CreatePassword from "./CreatePassword";
-import { useAuthStore } from "@/store/useAuthStore"; // ✅ Importamos Zustand
+import { useAuthStore } from "@/store/useAuthStore";
 import Cookies from "js-cookie";
 
 const Header: React.FC = () => {
@@ -17,12 +17,17 @@ const Header: React.FC = () => {
   const [isSearchExpanded, setIsSearchExpanded] = useState(false);
   const [isCreatePasswordOpen, setIsCreatePasswordOpen] = useState(false);
   const [userEmail, setUserEmail] = useState("");
-
-  const { isAuthenticated, setIsAuthenticated } = useAuthStore(); // ✅ Estado global de autenticación
+  const [isAuthChecked, setIsAuthChecked] = useState(false); // Nuevo estado
+  const { isAuthenticated, setIsAuthenticated } = useAuthStore();
 
   useEffect(() => {
-    const authToken = Cookies.get("authToken");
-    setIsAuthenticated(!!authToken); // ✅ Actualiza Zustand si el token está en las cookies
+    const checkAuth = () => {
+      const authToken = Cookies.get("authToken");
+      setIsAuthenticated(!!authToken);
+      setIsAuthChecked(true); // Marcamos que ya verificamos la autenticación
+    };
+
+    checkAuth();
   }, []);
 
   const handleOpenLoginModal = () => {
@@ -39,6 +44,15 @@ const Header: React.FC = () => {
     setIsSearchExpanded(expanded);
   };
 
+  // No renderizamos nada hasta que se verifique la autenticación
+  if (!isAuthChecked) {
+    return (
+      <header className="bg-black text-white fixed py-[1rem] px-[1rem] h-[5rem] z-[9999] w-full flex items-center">
+        <img src="/logo.png" alt="Logo" className="w-[60px] h-auto" />
+      </header>
+    );
+  }
+
   return (
     <header className="bg-black text-white fixed py-[1rem] h-[5rem] z-[9999] w-full flex items-center">
       <div className="flex flex-row items-center justify-between">
@@ -47,8 +61,7 @@ const Header: React.FC = () => {
             <img src="/logo.png" alt="Logo" className="w-[60px] h-auto" />
           </Link>
         </div>
-
-        {/* ✅ Se actualiza automáticamente dependiendo de si hay token en las cookies */}
+        
         {!isAuthenticated ? (
           <div className="flex flex-row space-x-[1rem] absolute right-[1rem] xxl:right-[3rem]">
             <ButtonHeader text={"Sign up"} handlelogin={handleOpenSignUpModal} />
@@ -57,7 +70,7 @@ const Header: React.FC = () => {
             </div>
           </div>
         ) : (
-          <div className="flex flex-row  absolute right-[2rem] w-[55%] items-center">
+          <div className="flex flex-row absolute right-[2rem] w-[55%] items-center">
             <div className={`${isSearchExpanded ? "hidden" : "flex"} md:flex flex-row items-center `}>
               <SectionSwitcher />
             </div>
@@ -83,7 +96,11 @@ const Header: React.FC = () => {
         />
       )}
       {isCreatePasswordOpen && (
-        <CreatePassword setIsCreatePasswordOpen={setIsCreatePasswordOpen} setIsSignUpModalOpen={setIsSignUpModalOpen} userEmail={userEmail} />
+        <CreatePassword 
+          setIsCreatePasswordOpen={setIsCreatePasswordOpen} 
+          setIsSignUpModalOpen={setIsSignUpModalOpen} 
+          userEmail={userEmail} 
+        />
       )}
     </header>
   );
