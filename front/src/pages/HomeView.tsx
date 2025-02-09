@@ -8,6 +8,7 @@ import { IMovieDataProps } from '@/interface/globalTypes';
 import styles from '../styles/Home.module.css'
 
 export const HomeView: React.FC = () => {
+  console.log('Styles loaded:', styles);
   const [activeStep, setActiveStep] = useState(0); 
   const [filteredMovies, setFilteredMovies] = useState<IMovieDataProps[]>([]);
 
