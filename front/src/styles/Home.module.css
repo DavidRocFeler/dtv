@@ -1,17 +1,18 @@
-@media (min-width: 1070) {
+@media (min-width: 1070px) {
     .MovieCover {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr); 
-        grid-template-rows: repeat(8, 1fr); 
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(8, 1fr);
     }
     .MovieContent {
-        width: 60%;
+      width: 60%;
     }
-}
-@media (min-width: 1400) {
+  }
+  
+  @media (min-width: 1400px) {
     .MovieCover {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(6, 1fr); 
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(6, 1fr);
     }
-}
+  }
