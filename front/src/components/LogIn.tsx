@@ -2,19 +2,20 @@ import React, { useState } from "react";
 import { IAuthProps } from "@/interface/globalTypes";
 import { useAuthStore } from "@/store/useAuthStore";
 import { loginApiRequest } from "@/server/loginAuth";
-import Cookies from "js-cookie"; // For secure cookie management
+import Cookies from "js-cookie";
 import Swal from "sweetalert2";
 import { useRouter } from "next/navigation";
+import { Loader2 } from "lucide-react"; // Importamos el ícono de loading
 
-const Login: React.FC<IAuthProps> = ({ 
-  setIsAuthModalOpen, 
+const Login: React.FC<IAuthProps> = ({
+  setIsAuthModalOpen,
   setIsSignUpModalOpen
 }) => {
   const [userData, setUserData] = useState({
     email: '',
     password: ''
   });
-
+  const [isLoading, setIsLoading] = useState(false); // Nuevo estado para loading
   const { setUser, setIsAuthenticated } = useAuthStore();
   const router = useRouter();
 
@@ -28,20 +29,17 @@ const Login: React.FC<IAuthProps> = ({
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsLoading(true); // Activamos el loading
     try {
       const response = await loginApiRequest(userData);
-      
       if (!response || !response.token) {
         throw new Error("Login fallido");
       }
-  
-      // Solo guardamos el token en cookies
       Cookies.set("authToken", response.token, {
         secure: true,
         sameSite: "strict",
         expires: 7
       });
-  
       setIsAuthenticated(true);
       router.push('/home');
       setIsAuthModalOpen(false);
@@ -52,6 +50,8 @@ const Login: React.FC<IAuthProps> = ({
         text: "Email o contraseña incorrectos.",
         confirmButtonColor: "#d33",
       });
+    } finally {
+      setIsLoading(false); // Desactivamos el loading al terminar
     }
   };
 
@@ -59,6 +59,7 @@ const Login: React.FC<IAuthProps> = ({
     setIsAuthModalOpen(false);
     setIsSignUpModalOpen(true);
   };
+
 
   return (
     <div className="flex w-full fixed z-[1] text-white top-0 bg-blue-gradient min-h-[100vh] justify-center items-center">
@@ -98,12 +99,22 @@ const Login: React.FC<IAuthProps> = ({
               required
             />
           </div>
-          <button 
+          <button
             type="submit"
             className="mt-[3rem] w-full bg-gradient-to-r from-[#0E1F75] to-[#081142] p-[1rem] mx-auto rounded flex items-center justify-center"
+            disabled={isLoading} // Desactiva el botón mientras está cargando
           >
-            Log In
-            <img className="ml-[1rem]" src="/VectorArrowRight.png" alt="" />
+            {isLoading ? (
+              <>
+                <Loader2 className="h-5 w-5 animate-spin" />
+                <span className="ml-[1rem]">Cargando...</span>
+              </>
+            ) : (
+              <>
+                Log In
+                <img className="ml-[1rem]" src="/VectorArrowRight.png" alt="" />
+              </>
+            )}
           </button>
           <p className="mt-[1.5rem]">Forgot password?</p>
           <button
