@@ -22,11 +22,11 @@ const SectionSwitcher = () => {
   // Función para redirigir según la sección actual
   const enterSection = () => {
     if (currentSection === "Movies") {
-      router.push("section/movies");
+      router.push("/section/movies");
     } else if (currentSection === "Series") {
-      router.push("section/series");
+      router.push("/section/series");
     } else if (currentSection === "Animes") {
-      router.push("section/animes");
+      router.push("/section/animes");
     }
   };
 
