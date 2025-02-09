@@ -8,6 +8,9 @@ export default {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        custom: "0px 2px 10px 1px #0BACF2",
+      },
       backgroundImage: {
         'custom-gradient': 'linear-gradient(to bottom, #32408A 20%, #112177 100%)',
         'blue-gradient':'linear-gradient(to left, #000 0%, #0E1F76 100%)',

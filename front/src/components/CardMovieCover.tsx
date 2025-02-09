@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 const CardMovieCover: React.FC<IMovieDataProps> = ({title, year, director, duration, genre, rate, poster, section, review}) => {
   const [truncatedReview, setTruncatedReview] = useState(review);
   const formattedGenres = genre.join(' - ');
+  const [isHovered, setIsHovered] = useState(false);
 
   const truncText = (text: string, maxWords: number = 13): string => {
     const words = text.split(' ');
@@ -35,23 +36,32 @@ const CardMovieCover: React.FC<IMovieDataProps> = ({title, year, director, durat
   }, [review]); 
     
   return (
-        <div className='relative flex items-center justify-center cursor-pointer'>
-            <div className="object-contain  hover:border-solid hover:border-white hover:border-[3px]
-            w-auto h-[193px] xs:h-[203px] md:h-[291px] xxxl:h-[321px] xxxll:h-[361px] tv:h-[401px] overflow-hidden"
-            >
-                <img
-                className="hover:scale-505 hover:opacity-[0.1] hover:p-[1rem] transition-all ease-out duration-300 w-auto m-auto h-[193px] xs:h-[203px] md:h-[291px] xxxl:h-[321px] xxxll:h-[361px] tv:h-[401px]"
-                src={poster}
-                alt={title}
-                />
-            </div>
-            <article className='absolute top-[1rem] z-[-1] m-auto w-[100px] xs:w-[110px] md:w-[169px] xxxl:w-[170px] xxxll:w-[200px] tv:w-[230px]'>
-                <p className='text-[0.7rem] md:text-[0.8rem] xxl:text-[0.9rem] xxxl:text-[1rem] xxxll:text-[1.1rem] tv:text-[1.2rem]' >{duration} - {year} </p>
-                <p className='text-[0.7rem] md:text-[0.8rem] xxl:text-[0.9rem] xxxl:text-[1rem] xxxll:text-[1.1rem] tv:text-[1.2rem] mb-[2rem]'> {formattedGenres} </p>
-                <p className='text-[0.7rem] md:text-[0.8rem] xxl:text-[0.9rem] xxxl:text-[1rem] xxxll:text-[1.1rem] tv:text-[1.2rem] '> {truncatedReview} </p>
-            </article>
+    <div 
+      className="relative flex flex-col items-center justify-center cursor-pointer"
+      onMouseEnter={() => setIsHovered(true)} 
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {/* Contenedor de la imagen con overlay */}
+      <div className="relative w-auto h-[193px] xs:h-[203px] md:h-[291px] xxxl:h-[321px] xxxll:h-[361px] tv:h-[401px] overflow-hidden">
+        {/* Imagen */}
+        <img
+          className={`transition-all ease-out duration-300 w-auto m-auto h-full ${isHovered ? "opacity-10 scale-105" : "opacity-100 scale-100"}`}
+          src={poster}
+          alt={title}
+        />
+
+        {/* Overlay que aparece al hacer hover */}
+        <div 
+          className={`absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center bg-black bg-opacity-50 text-white py-[1rem] px-[0rem] xxs:px-[1rem] 
+                     transition-opacity duration-300 ${isHovered ? "opacity-100" : "opacity-0"}`}
+        >
+          <p className="text-[0.7rem] md:text-[0.8rem] xxl:text-[0.9rem] xxxl:text-[1rem] xxxll:text-[1.1rem] tv:text-[1.2rem]">{duration} - {year}</p>
+          <p className="text-center text-[0.7rem] md:text-[0.8rem] xxl:text-[0.9rem] xxxl:text-[1rem] xxxll:text-[1.1rem] tv:text-[1.2rem] mb-[2rem]">{formattedGenres}</p>
+          <p className="text-center text-[0.7rem] md:text-[0.8rem] xxl:text-[0.9rem] xxxl:text-[1rem] xxxll:text-[1.1rem] tv:text-[1.2rem]">{truncatedReview}</p>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default CardMovieCover;

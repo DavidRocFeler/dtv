@@ -19,6 +19,7 @@ const Header: React.FC = () => {
   const [userEmail, setUserEmail] = useState("");
   const [isAuthChecked, setIsAuthChecked] = useState(false); // Nuevo estado
   const { isAuthenticated, setIsAuthenticated } = useAuthStore();
+  const [delayedSearchExpanded, setDelayedSearchExpanded] = useState(false);
 
   useEffect(() => {
     const checkAuth = () => {
@@ -42,13 +43,23 @@ const Header: React.FC = () => {
 
   const handleSearchExpand = (expanded: boolean) => {
     setIsSearchExpanded(expanded);
+
+  if (!expanded) {
+      // Si se cierra el input, esperamos 3 segundos antes de mostrar SectionSwitcher
+      setTimeout(() => {
+        setDelayedSearchExpanded(false);
+      }, 300); // 3000ms = 3 segundos
+    } else {
+      // Si se abre el input, ocultamos SectionSwitcher inmediatamente
+      setDelayedSearchExpanded(true);
+    }
   };
 
   // No renderizamos nada hasta que se verifique la autenticación
   if (!isAuthChecked) {
     return (
       <header className="bg-black text-white fixed py-[1rem] px-[1rem] h-[5rem] z-[9999] w-full flex items-center">
-        <img src="/logo.png" alt="Logo" className="w-[60px] h-auto" />
+        <img src="/logo.png" alt="Logo" className="w-[50px] xxl:w-[60px] h-auto" />
       </header>
     );
   }
@@ -58,7 +69,7 @@ const Header: React.FC = () => {
       <div className="flex flex-row items-center justify-between">
         <div className="flex-shrink-0 ml-[0.5rem] md:ml-[1rem]">
           <Link href="/">
-            <img src="/logo.png" alt="Logo" className="w-[60px] h-auto" />
+            <img src="/logo.png" alt="Logo" className="w-[50px] xxl:w-[60px] h-auto" />
           </Link>
         </div>
         
@@ -70,13 +81,15 @@ const Header: React.FC = () => {
             </div>
           </div>
         ) : (
-          <div className="flex flex-row absolute right-[2rem] w-[55%] items-center">
-            <div className={`${isSearchExpanded ? "hidden" : "flex"} md:flex flex-row items-center `}>
+          <div className="flex flex-row absolute right-[1rem] md:right-[2rem] w-[58%] md:w-[51%] items-center">
+            {/* Ocultar SectionSwitcher con retraso */}
+            <div className={`${delayedSearchExpanded ? "hidden" : "flex"} xxl:flex flex-row items-center`}>
               <SectionSwitcher />
             </div>
+      
             <div className="flex flex-row items-center space-x-4 ml-auto mr-[0] ">
               <SearchBar onExpand={handleSearchExpand} />
-              <div className={`${isSearchExpanded ? "hidden" : "flex"} md:flex`}>
+              <div className={`${isSearchExpanded ? "hidden" : "flex"} xxl:flex`}>
                 <DropDown />
               </div>
             </div>

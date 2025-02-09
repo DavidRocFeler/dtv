@@ -1,0 +1,16 @@
+.DropDownMenu {
+    color: rgba(255, 255, 255, 0.782); /* text-[#666666] */
+    cursor: pointer; /* cursor-pointer */
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+    cursor: pointer; /* Cursor en puntero */
+    transition: all 0.2s ease-in-out;
+}
+.DropDownMenu:active {
+    transform: translateY(2px); /* Mueve el botón hacia abajo simulando presión */
+  }
+  .DropDownMenu:hover {
+    color: white;
+  }

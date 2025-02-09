@@ -77,4 +77,9 @@ export interface IAuthState {
     setUserData: (id: string, token: string, role_name: string) => void;
     clearUser: () => void;
   }
-  
+  export interface INotificationProps {
+    id: number;
+    message: string;
+    timeAgo: string;
+    isRead: boolean;
+  }

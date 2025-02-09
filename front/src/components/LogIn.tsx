@@ -3,7 +3,6 @@ import { IAuthProps } from "@/interface/globalTypes";
 import { useAuthStore } from "@/store/useAuthStore";
 import { loginApiRequest } from "@/server/loginAuth";
 import Cookies from "js-cookie"; // For secure cookie management
-import { jwtEncode } from "@/utils/jwtUtils"; // Utility for token hashing
 import Swal from "sweetalert2";
 import { useRouter } from "next/navigation";
 
