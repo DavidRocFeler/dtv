@@ -2,14 +2,11 @@ import React, { useState } from "react";
 import { IAuthProps } from "@/interface/globalTypes";
 import { useAuthStore } from "@/store/useAuthStore";
 import { loginApiRequest } from "@/server/loginAuth";
-import Cookies from "js-cookie"; // For secure cookie management
+import Cookies from "js-cookie";
 import Swal from "sweetalert2";
 import { useRouter } from "next/navigation";
 
-const Login: React.FC<IAuthProps> = ({ 
-  setIsAuthModalOpen, 
-  setIsSignUpModalOpen
-}) => {
+const Login: React.FC<IAuthProps> = ({ setIsAuthModalOpen, setIsSignUpModalOpen }) => {
   const [userData, setUserData] = useState({
     email: '',
     password: ''
@@ -35,7 +32,6 @@ const Login: React.FC<IAuthProps> = ({
         throw new Error("Login fallido");
       }
   
-      // Solo guardamos el token en cookies
       Cookies.set("authToken", response.token, {
         secure: true,
         sameSite: "strict",
@@ -68,16 +64,16 @@ const Login: React.FC<IAuthProps> = ({
       >
         <img src="/closebutton.svg" alt="close" className="w-[0.8rem] h-[0.8rem]" />
       </button>
-      <div className="w-[80%] h-[35rem] flex flex-row border-[#152175] border-solid border-[1px]">
+      <div className="w-[80%]  h-[25rem] md:h-[35rem] flex flex-row border-[#152175] border-solid border-[1px]">
         <form 
           onSubmit={handleLogin}
-          className="flex flex-col w-[50%] h-[35rem] overflow-auto bg-black p-[3rem]"
+          className="flex flex-col md:w-[50%] w-full md:h-[35rem] overflow-auto bg-black p-[3rem]"
         >
           <div className="flex flex-row items-center w-fit mx-auto">
-            <img src="/logo.png" alt="logo" className="w-auto h-[3rem] mr-[1rem]" />
-            <h1 className="font-extrabold text-[3rem]">DTV</h1>
+            <img src="/logo.png" alt="logo" className="w-auto h-[1.5rem] md:h-[3rem] mr-[1rem]" />
+            <h1 className="font-extrabold text-[1.5rem] md:text-[3rem]">DTV</h1>
           </div>
-          <h2 className="mt-[2rem] text-[1.5rem]">Login in for DTV</h2>
+          <h2 className="mt-[2rem] text-[1rem] md:text-[1.5rem]">Login in for DTV</h2>
           <div className="flex flex-col mt-[1.5rem]">
             <input
               name="email"
@@ -114,7 +110,7 @@ const Login: React.FC<IAuthProps> = ({
             Create Account
           </button>
         </form>
-        <div className="w-[50%] bg-[url('/CoverAuthImage.png')] bg-cover bg-center bg-no-repeat"></div>
+        <div className="hidden md:block w-[50%] bg-[url('/CoverAuthImage.png')] bg-cover bg-center bg-no-repeat"></div>
       </div>
     </div>
   );
