@@ -75,11 +75,11 @@ const Header: React.FC = () => {
         
         {!isAuthenticated ? (
           <div className="flex flex-row space-x-[1rem] absolute right-[1rem] xxl:right-[3rem]">
-            <ButtonHeader text={"Sign up"} handlelogin={handleOpenSignUpModal} />
             <div className="hidden s:block">
-              <ButtonHeader text={"Log in"} handlelogin={handleOpenLoginModal} />
+            <ButtonHeader text={"Sign up"} handlelogin={handleOpenSignUpModal} />
             </div>
-          </div>
+              <ButtonHeader text={"Log in"} handlelogin={handleOpenLoginModal} />
+           </div>          
         ) : (
           <div className="flex flex-row absolute right-[1rem] md:right-[2rem] w-[58%] md:w-[51%] items-center">
             {/* Ocultar SectionSwitcher con retraso */}
