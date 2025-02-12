@@ -6,8 +6,10 @@ import { movieDataHelpers } from '@/helpers/MovieData.helpers';
 import React, { useState, useEffect } from 'react';
 import { IMovieDataProps } from '@/interface/globalTypes';
 import styles from '../styles/Home.module.css'
+import clsx from 'clsx';
 
 export const HomeView: React.FC = () => {
+  console.log('Styles loaded:', styles);
   const [activeStep, setActiveStep] = useState(0); 
   const [filteredMovies, setFilteredMovies] = useState<IMovieDataProps[]>([]);
 
@@ -42,14 +44,18 @@ export const HomeView: React.FC = () => {
     <>
         <div className='pt-[10rem] pb-[2rem] md:m-0 bg-gradient-to-r from-[#141414] to-black
         flex flex-col s:flex-row'>
-          <div className={`${styles.MovieContent} 
-          m-auto s:m-0 s:ml-[1rem] xl:ml-[3rem] xxl:ml-[5rem] xxxl:ml-[4rem]
-          w-[100%] s:w-[58%] ssm:w-[52%] sm:w-[50%] md:w-[58%] xl:w-[55%]
-          `}>
-            <a href='#ContainerMoreVideos' className='text-[#666666] shadow-custom px-[1rem] py-[0.5rem] rounded-[8px] border-solid border-[#0BADEE] border-[1px] w-[90%] xxs:w-[85%] xss:w-[81%]  m-auto text-center block s:hidden text-[1rem] ssm:text-[1.5rem] mb-[1.5rem]'>Press for more videos</a>
-            <div className={`${styles.MovieCover} gap-y-[1rem] pt-[2.5rem]
-            grid grid-row-12 grid-cols-2 
-          `}>
+          <div className={clsx
+          (styles.MovieContent,
+          'm-auto s:m-0 s:ml-[1rem] xl:ml-[3rem] xxl:ml-[5rem] xxxl:ml-[4rem]',
+          'w-[100%] s:w-[58%] ssm:w-[52%] sm:w-[50%] md:w-[58%] xl:w-[55%]'
+          )}>
+            <a href='#ContainerMoreVideos' 
+            className='text-[#666666] shadow-custom px-[1rem] py-[0.5rem] rounded-[8px] border-solid border-[#0BADEE] border-[1px] w-[90%] xxs:w-[85%] xss:w-[81%]  m-auto text-center block s:hidden text-[1rem] ssm:text-[1.5rem] mb-[1.5rem]'>Press for more videos</a>
+            <div className={clsx(
+            styles.MovieCover, 
+            'gap-y-[1rem] pt-[2.5rem]',
+            'grid grid-row-12 grid-cols-2'
+            )}>
               {movieDataHelpers.map((item) => (
                 <CardMovieCover key={item.id} {...item} />
               ))}
