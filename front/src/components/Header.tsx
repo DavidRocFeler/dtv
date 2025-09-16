@@ -5,7 +5,7 @@ import DropDown from "./DropDown";
 import SearchBar from "./SearchBar";
 import SectionSwitcher from "./SectionSwitcher";
 import Link from "next/link";
-import SingUp from "./SingUp";
+import SingUp from "./signup/SingUp";
 import Login from "./LogIn";
 import CreatePassword from "./CreatePassword";
 import { useAuthStore } from "@/store/useAuthStore";
